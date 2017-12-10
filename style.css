@@ -1,0 +1,13 @@
+.keys {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.key {
+  border: 1px solid red;
+  transition: all 0.07s
+}
+
+.playing {
+  transform: scale(2)
+}
