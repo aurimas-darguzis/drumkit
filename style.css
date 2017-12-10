@@ -13,7 +13,22 @@
 
 .key {
   border: 1px solid red;
-  transition: all 0.07s
+  transition: all 0.07s;
+  text-align: center;
+  width: 7%;
+  height: 7%;
+  background-color: #00000063;
+  color: #bbfda2;
+}
+
+kbd {
+  display: block;
+  font-size: 3rem;
+}
+
+.sound {
+  font-size: 0.7rem;
+  font-family: fantasy;
 }
 
 .playing {
