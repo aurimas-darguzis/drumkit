@@ -1,2 +1,2 @@
 # drumkit
- Demo http://axioma.world/drumkit/
+ Demo: http://axioma.world/drumkit/
