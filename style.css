@@ -39,3 +39,19 @@ kbd {
 .playing {
   transform: scale(2);
 }
+
+@media screen and (min-width: 0px) {
+
+}
+
+@media screen and (min-width: 610px) {
+
+}
+
+@media screen and (min-width: 930px) {
+
+}
+
+@media screen and (min-width: 1170px) {
+  
+}
