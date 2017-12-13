@@ -26,6 +26,10 @@ body {
   color: #bbfda2;
 }
 
+.key:hover {
+  cursor: pointer;
+}
+
 kbd {
   display: block;
   font-size: 3rem;
