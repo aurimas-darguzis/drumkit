@@ -41,17 +41,29 @@ kbd {
 }
 
 @media screen and (min-width: 0px) {
-
+  .container {
+    border: 10px solid #efefb9;
+  }
+  
 }
 
 @media screen and (min-width: 610px) {
-
+  .container {
+    border: 10px solid #248224;
+  }
+  
 }
 
 @media screen and (min-width: 930px) {
-
+  .container {
+    border: 10px solid #5474ca;
+  }
+  
 }
 
 @media screen and (min-width: 1170px) {
-  
+  .container {
+    border: 10px solid #C5A1A2;
+  }
+
 }
