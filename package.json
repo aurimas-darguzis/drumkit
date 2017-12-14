@@ -1,0 +1,29 @@
+{
+  "name": "drumkit",
+  "version": "1.0.0",
+  "description": "Play sounds of drums using keyboard, or simply tap",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine-node specs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aurimas-darguzis/drumkit.git"
+  },
+  "keywords": [
+    "drumkit",
+    "music",
+    "play",
+    "sounds",
+    "fun"
+  ],
+  "author": "Aurimas Darguzis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aurimas-darguzis/drumkit/issues"
+  },
+  "homepage": "https://github.com/aurimas-darguzis/drumkit#readme",
+  "dependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
