@@ -4,23 +4,36 @@ const expect = require('chai').expect
 const should = require('chai').should()
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
-const sinon = require('sinon§')
+const sinon = require('sinon')
 chai.use(chaiAsPromised)
 chai.should()
 
 describe('AuthController', function () {
   beforeEach(function settingUpRoles() {
     console.log('running before each')
-    authController.setRoles(['user'])
+    // authController.setRoles(['user'])
   })
-  describe('isAuthorized', function () {
+  describe.only('isAuthorized', function () {
+    let user = {}
+    beforeEach(function () {
+      user = {
+        roles: ['user'],
+        isAuthorized: function (neededRole) {
+          return this.roles.indexOf(neededRole) >= 0
+        }
+      }
+      sinon.spy(user, 'isAuthorized')
+      authController.setUser(user)
+    })
     it('Should return false if not authorized', function () {
       const isAuth = authController.isAuthorized('admin')
+      user.isAuthorized.calledOnce.should.be.true
       expect(isAuth).to.be.false
     })
     it('Should return true if authorized', function () {
       authController.setRoles(['user', 'admin'])
       const isAuth = authController.isAuthorized('admin')
+      user.isAUthorized.calledOnce.should.be.true
       isAuth.should.be.true
     })
     it('Should not allow a get if not authorized');
@@ -50,9 +63,9 @@ describe('AuthController', function () {
       const res = {
         render: sinon.spy()
       }
-      
       authController.getIndex(req, res)
       res.render.calledOnce.should.be.true
+      res.render.firstCall.args[0].should.equal('index')
     })
   })
 })
