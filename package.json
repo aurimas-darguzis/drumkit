@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test-node": "jasmine-node spec/",
-    "test": "./node_modules/jasmine/bin/jasmine.js"
+    "test": "mocha './test/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,7 @@
   "homepage": "https://github.com/aurimas-darguzis/drumkit#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "jasmine": "^2.8.0",
-    "jasmine-node": "^1.14.5",
+    "mocha": "^4.0.1",
     "request": "^2.83.0"
   }
 }
