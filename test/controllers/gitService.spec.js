@@ -26,11 +26,24 @@ describe('GitService', function () {
       gitResponse.write(JSON.stringify(gitJson))
       gitResponse.end()
 
-      // callsArgWith is going to call [1] passing it gitResponse.
-      this.request.callsArgWith(1, gitResponse).returns(new PassThrough())
+      const repoResponse = new PassThrough()
+      repoResponse.write(JSON.stringify(repoJson))
+      repoResponse.end()
 
+      // callsArgWith is going to call [1] passing it gitResponse.
+      this.request
+        .onFirstCall().callsArgWith(1, gitResponse).returns(new PassThrough())
+        .onSecondCall().callsArgWith(1, repoResponse).returns(new PassThrough())
+
+        /**
+         * Use arrow function here, so 'this' will be bound to request object ^
+         * We use 'function' in all above, so we can say 'this.timeout(10000)'
+         */
       return gitService.getUser('someuser').then(
-        function (user) {
+         (user) => {
+          const params = this.request.getCall(0).args
+          params[0].headers['User-Agent'].should.equal('gitExample')
+          this.request.getCall(1).args[0].path.should.equal('/users/someuser/repos')
           user.login.should.equal('someuser')
           user.should.have.property('repos')
         }
