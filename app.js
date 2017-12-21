@@ -3,6 +3,7 @@ const app = express()
 
 app.get('/', (req, res) => {
     res.status(200).send('The Drumkit')
+    // res.render('index')
 })
 
 app.get('/test', (req, res) => {
