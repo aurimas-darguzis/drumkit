@@ -4,6 +4,7 @@ const expect = require('chai').expect
 const should = require('chai').should()
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
+const sinon = require('sinon§')
 chai.use(chaiAsPromised)
 chai.should()
 
@@ -40,6 +41,18 @@ describe('AuthController', function () {
     it('Should return false if not authorized', function () {
       return authController.isAuthorizedPromise('admin').should.eventually.be.false
 
+    })
+  })
+
+  describe('getIndex', function () {
+    it('should render index', function () {
+      const req = {}
+      const res = {
+        render: sinon.spy()
+      }
+      
+      authController.getIndex(req, res)
+      res.render.calledOnce.should.be.true
     })
   })
 })
