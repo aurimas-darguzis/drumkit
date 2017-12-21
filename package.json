@@ -26,6 +26,7 @@
   "homepage": "https://github.com/aurimas-darguzis/drumkit#readme",
   "dependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "express": "^4.16.2",
     "mocha": "^4.0.1",
     "request": "^2.83.0"
