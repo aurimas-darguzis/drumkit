@@ -1,11 +1,13 @@
 function playSound(e) {
-
+console.log(e.type)
   let keyCode
   e.type === 'keyup' ? keyCode = e.keyCode : keyCode = this.getAttribute('data-key')
 
   
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+  // const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+  // const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`)
+  const key = document.querySelector(`.key[data-key="${keyCode}"]`)
   if (!audio) return
   audio.currentTime = 0
   audio.play()
